@@ -39,7 +39,7 @@ class ClientTest(unittest.TestCase):
 			ask_price = quote['top_ask']['price']
 			price = (ask_price + bid_price) / 2
 			prices[quote['stock']] = price
-		print("When stock-B is zero, prices are", prices)
+		#print("When stock-B is zero, prices are", prices)
 		self.assertEqual(getRatio(prices['ABC'], prices['DEF']), None)
 
 	def test_getRatioZeroA(self):
@@ -53,7 +53,7 @@ class ClientTest(unittest.TestCase):
 			ask_price = quote['top_ask']['price']
 			price = (ask_price + bid_price) / 2
 			prices[quote['stock']] = price
-		print("When stock-A is zero, prices are ", prices)
+		#print("When stock-A is zero, prices are ", prices)
 		self.assertEqual(getRatio(prices['ABC'], prices['DEF']), 0)
 
 	def test_getRatio(self):
@@ -67,8 +67,10 @@ class ClientTest(unittest.TestCase):
 			ask_price = quote['top_ask']['price']
 			price = (ask_price + bid_price) / 2
 			prices[quote['stock']] = price
-		print("When stock prices are non-zero, prices are", prices)
+		#print("When stock prices are non-zero, prices are", prices)
 		self.assertEqual(getRatio(prices['ABC'], prices['DEF']), 1.0005426841995408)
+
+
 
 if __name__ == '__main__':
 		unittest.main()
